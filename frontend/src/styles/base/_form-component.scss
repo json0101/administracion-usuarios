@@ -1,0 +1,59 @@
+
+.form-field {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form label {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+} 
+
+.form input[type=text], .form input[type=password], .form select {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid $gray;
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+.form input[type=text]:active, .form input[type=text]:focus,
+.form input[type=password]:active, .form input[type=password]:focus
+,.form select:active, form select:focus {
+    border-color: $secondary;
+    outline: 0;
+}
+
+.form input[type=checkbox] {
+    height: 20px;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 10px;
+    border-color: transparent;
+}
+
+.btn.primary {
+    background-color: $primary;
+    color: $text-white;
+}
+
+.btn.secondary {
+    background-color: $secondary;
+    color: $text-white;
+}
+
+.btn.danger {
+    background-color: $danger;
+    color: $text-white;
+}
+
+.button-panel {
+    padding: 5px;
+}
+
+.button-panel button {
+    margin-right: 5px;
+}

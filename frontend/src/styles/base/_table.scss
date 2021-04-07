@@ -1,0 +1,23 @@
+.table {
+    width: 100%;
+    border-bottom: 1px solid $primary;
+}
+
+.table thead tr {
+    height: 40px;
+    border-radius: 10px;
+}
+
+.table thead {
+    background-color: $primary;
+    padding: 10px;
+    color:white;
+    
+}
+
+.table tbody tr {
+    height: 40px;
+}
+
+.table tbody tr:nth-child(even) {background: $primary-light}
+.table tbody tr:nth-child(odd) {background: #FFF}

@@ -1,0 +1,60 @@
+.auth_main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.login {
+    max-width: 700px;
+    max-height: 500px;
+    min-width: 300px;
+    min-height: 350px;
+    box-sizing: border-box;
+    display: block;
+    padding: 20px;
+    border-radius: 15px 50px 30px;
+    background: linear-gradient(to right, $primary, $secondary);
+    margin-bottom: 20%;
+}
+
+.login h1 {
+    text-align: center;
+    color: $primary-light;
+}
+
+.login label {
+    color: $primary-light;
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.login-input {
+    display: block;
+    width: 90%;
+    border: 1px solid $primary-light;
+    border-radius: 6px;
+    padding: 5px 12px;
+    margin-bottom: 5px;
+}
+
+.login button {
+    display: block;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+    background-color: $green-light;
+}
+
+.login a {
+    text-align: right;
+    width: 100%;
+    display: block;
+    color: white;
+    margin-bottom: 10px;
+}
+
+
