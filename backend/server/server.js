@@ -26,6 +26,7 @@ app.use(require("./routes/usuario"));
 app.use(require("./routes/login"));
 app.use(require("./routes/role"));
 app.use(require('./routes/aplication-route'));
+app.use(require('./routes/screen-route'));
 
 
 app.listen(process.env.PORT, () =>

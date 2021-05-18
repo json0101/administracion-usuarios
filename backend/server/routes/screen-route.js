@@ -1,7 +1,7 @@
 const express = require("express");
 const {validarJWT} = require("../middlewares/validar-jwt");
 
-const Aplication = require("../models/aplication-model");
+const Screen = require("../models/screen-model");
 
 const app = express();
 const router = express.Router();
@@ -10,9 +10,9 @@ router.use(validarJWT);
 
 router.get('/resume', (req, res) => {
     
-    Aplication.GetAplicationsResume()
-        .then(aplications => {
-            return res.json({ok: true, aplications})
+    Screen.GetAplicationsResume()
+        .then(aplication => {
+            return res.json({ok: true, aplication})
         })
         .catch(error => {
             return res.status(500).json({ok: false, message: error.message});
@@ -32,9 +32,9 @@ router.get('/:id', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-    Aplication.GetAplications()
-        .then(apps => {
-            return res.json({ok: true, apps});
+    Screen.GetScreens()
+        .then(screens => {
+            return res.json({ok: true, screens});
         })
         .catch(error => {
             return res.status(500).json({ok: false, message: error.message});
@@ -42,11 +42,12 @@ router.get('/', (req, res) => {
 });
 
 router.post('/create', (req, res) => {
-    const {aplication_description, user_id_created, active} = req.body;
-    const app = new Aplication(0, aplication_description, active,0);
+    const {screen_description,aplication_id, user_id_created, active} = req.body;
+    const screen = new Screen(0, screen_description, aplication_id, active,0,0);
+    console.log("creando screen");
 
-    app.Create()
-        .then(role => {
+    screen.Create()
+        .then(screen => {
             return res.json({ok: true, message: "OK"});
         })
         .catch((error) =>{
@@ -57,10 +58,10 @@ router.post('/create', (req, res) => {
 router.delete('/delete/:id', (req, res) => {
     const { id } = req.params;
     
-    const app = new Aplication(id,"",1,0);
+    const screen = new Screen(id,"",1,0);
 
-    app.Delete()
-        .then(app => {
+    screen.Delete()
+        .then(sc => {
             return res.json({ok: true, message: "OK"});
         })
         .catch((error) => {
@@ -82,6 +83,6 @@ router.put('/update', (req, res) => {
         })
 });
 
-app.use('/aplication', router);
+app.use('/screen', router);
 
 module.exports = app;

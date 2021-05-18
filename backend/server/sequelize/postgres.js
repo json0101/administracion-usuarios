@@ -1,7 +1,7 @@
 
 const {Sequelize} = require('sequelize');
 
-const postgres = new Sequelize('admin_users', 'postgres', 'jolteon20', {
+const postgres = new Sequelize('users', 'postgres', 'root', {
     dialect: 'postgres',
     host: 'localhost',
     timezone: '-06:00'

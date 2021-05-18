@@ -14,7 +14,7 @@ Aplication.init({
     creation_date: DataTypes.DATE,
     user_created: DataTypes.INTEGER,
     updated_date: DataTypes.DATE,
-    user_updated: DataTypes.INTEGER
+    user_updated: DataTypes.INTEGER         
 }, {sequelize: postgres, schema: "auth", modelName: "aplications",timestamps: false});
 
 module.exports = Aplication;
